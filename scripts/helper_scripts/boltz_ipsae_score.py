@@ -8,6 +8,7 @@ from Boltz-2 output files (PAE, PDE, pLDDT, and CIF).
 import os
 import sys
 import numpy as np
+# import pandas as pd
 
 def load_npz(path, key=None):
     if not os.path.exists(path):
@@ -45,7 +46,7 @@ def compute_ipsae(pae, pde, plddt):
     ipsae = (pae_score * 0.4) + (pde_score * 0.3) + (plddt_score * 0.3)
     return ipsae, pae_score, pde_score, plddt_score
 
-def main():
+def score():
     if len(sys.argv) < 3:
         print("Usage: python boltz_ipsae_score.py <base_dir> <stem_base>")
         print("Example: python boltz_ipsae_score.py structures/my_structure_001 my_structure_001_model_0")
@@ -95,5 +96,10 @@ def main():
 
     print(output_dict)
 
+    ## Output Pandas DF
+    # df = pd.DataFrame.from_dict(output_dict, orient='index')
+    # return(df)
+    
+
 if __name__ == "__main__":
-    main()
+    score()
