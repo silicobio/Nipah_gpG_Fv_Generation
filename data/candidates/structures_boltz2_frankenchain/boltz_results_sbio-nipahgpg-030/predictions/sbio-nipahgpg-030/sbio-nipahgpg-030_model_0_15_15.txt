@@ -1,0 +1,6 @@
+
+Chn1,Chn2,PAE,Dist,Type,ipSAE,ipSAE_d0chn,ipSAE_d0dom,ipTM_af,ipTM_d0chn,pDockQ,pDockQ2,LIS,n0res,n0chn,n0dom,d0res,d0chn,d0dom,nres1,nres2,dist1,dist2,Model
+A,B,15,15,asym,0.326290,0.527598,0.523638,0.706,0.527598,0.2954,0.0579,0.1871,249,665,652,5.84,8.94,8.87,403,249,125,114,../data/candidates/structures_boltz2_frankenchain/boltz_results_sbio-nipahgpg-030/predictions/sbio-nipahgpg-030/sbio-nipahgpg-030_model_0
+B,A,15,15,asym,0.415757,0.510941,0.507912,0.688,0.510941,0.2954,0.0473,0.1718,416,665,655,7.34,8.94,8.89,239,416,114,123,../data/candidates/structures_boltz2_frankenchain/boltz_results_sbio-nipahgpg-030/predictions/sbio-nipahgpg-030/sbio-nipahgpg-030_model_0
+A,B,15,15,max,0.415757,0.527598,0.523638,0.706,0.527598,0.2954,0.0579,0.1795,416,665,652,7.34,8.94,8.87,416,249,125,114,../data/candidates/structures_boltz2_frankenchain/boltz_results_sbio-nipahgpg-030/predictions/sbio-nipahgpg-030/sbio-nipahgpg-030_model_0
+
