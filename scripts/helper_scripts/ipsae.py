@@ -2,6 +2,8 @@
 # script for calculating the ipSAE score for scoring pairwise protein-protein interactions in AlphaFold2 and AlphaFold3 models
 # https://www.biorxiv.org/content/10.1101/2025.02.10.637595v1
 
+# Slightly modifed to produce output that can be more easily read with pandas
+
 # Also calculates:
 #    pDockQ: Bryant, Pozotti, and Eloffson. https://www.nature.com/articles/s41467-022-28865-w
 #    pDockQ2: Zhu, Shenoy, Kundrotas, Elofsson. https://academic.oup.com/bioinformatics/article/39/7/btad424/7219714
@@ -19,7 +21,6 @@
 #      pip install numpy
 
 # Usage:
-
 #  python ipsae.py <path_to_af2_pae_file>     <path_to_af2_pdb_file>     <pae_cutoff> <dist_cutoff>
 #  python ipsae.py <path_to_af3_pae_file>     <path_to_af3_cif_file>     <pae_cutoff> <dist_cutoff>
 #  python ipsae.py <path_to_boltz1_pae_file>  <path_to_boltz1_cif_file>  <pae_cutoff> <dist_cutoff>
@@ -727,7 +728,7 @@ for chain1 in unique_chains:
                     jresnum=residues[j]['resnum']
                     dist_unique_residues_chain2[chain1][chain2].add(jresnum)
 
-OUT2.write("i   AlignChn ScoredChain  AlignResNum  AlignResType  AlignRespLDDT      n0chn  n0dom  n0res    d0chn     d0dom     d0res   ipTM_pae  ipSAE_d0chn ipSAE_d0dom    ipSAE \n")
+OUT2.write("i,AlignChn,ScoredChain,AlignResNum,AlignResType,AlignRespLDDT,n0chn,n0dom,n0res,d0chn,d0dom,d0res,ipTM_pae,ipSAE_d0chn,ipSAE_d0dom,ipSAE \n")
 for chain1 in unique_chains:
     for chain2 in unique_chains:
         if chain1 == chain2:
@@ -764,17 +765,17 @@ for chain1 in unique_chains:
                 f'{chain2:4}      '
                 f'{residues[i]["resnum"]:4d}           '
                 f'{residues[i]["res"]:3}        '
-                f'{plddt[i]:8.2f}         '
-                f'{int(n0chn[chain1][chain2]):5d}  '
-                f'{int(n0dom[chain1][chain2]):5d}  '
-                f'{int(n0res_byres[chain1][chain2][i]):5d}  '
-                f'{d0chn[chain1][chain2]:8.3f}  '
-                f'{d0dom[chain1][chain2]:8.3f}  '
-                f'{d0res_byres[chain1][chain2][i]:8.3f}   '
-                f'{iptm_d0chn_byres[chain1][chain2][i]:8.4f}    '
-                f'{ipsae_d0chn_byres[chain1][chain2][i]:8.4f}    '
-                f'{ipsae_d0dom_byres[chain1][chain2][i]:8.4f}    '
-                f'{ipsae_d0res_byres[chain1][chain2][i]:8.4f}\n'
+                f'{plddt[i]:.2f}         '
+                f'{int(n0chn[chain1][chain2])}  '
+                f'{int(n0dom[chain1][chain2])}  '
+                f'{int(n0res_byres[chain1][chain2][i])}  '
+                f'{d0chn[chain1][chain2]:.3f}  '
+                f'{d0dom[chain1][chain2]:.3f}  '
+                f'{d0res_byres[chain1][chain2][i]:.3f}   '
+                f'{iptm_d0chn_byres[chain1][chain2][i]:.4f}    '
+                f'{ipsae_d0chn_byres[chain1][chain2][i]:.4f}    '
+                f'{ipsae_d0dom_byres[chain1][chain2][i]:.4f}    '
+                f'{ipsae_d0res_byres[chain1][chain2][i]:.4f}\n'
             )
             OUT2.write(outstring)
             
@@ -875,7 +876,7 @@ for chain1 in unique_chains:
         if chain1 >= chain2: continue
         chainpairs.add(chain1 + "-" + chain2)
 
-OUT.write("\nChn1 Chn2  PAE Dist  Type   ipSAE    ipSAE_d0chn ipSAE_d0dom  ipTM_af  ipTM_d0chn     pDockQ     pDockQ2    LIS       n0res  n0chn  n0dom   d0res   d0chn   d0dom  nres1   nres2   dist1   dist2  Model\n")
+OUT.write("\nChn1,Chn2,PAE,Dist,Type,ipSAE,ipSAE_d0chn,ipSAE_d0dom,ipTM_af,ipTM_d0chn,pDockQ,pDockQ2,LIS,n0res,n0chn,n0dom,d0res,d0chn,d0dom,nres1,nres2,dist1,dist2,Model\n")
 PML.write("# Chn1 Chn2  PAE Dist  Type   ipSAE    ipSAE_d0chn ipSAE_d0dom  ipTM_af  ipTM_d0chn     pDockQ     pDockQ2    LIS      n0res  n0chn  n0dom   d0res   d0chn   d0dom  nres1   nres2   dist1   dist2  Model\n")
 for pair in sorted(chainpairs):
     (chain_a, chain_b) = pair.split("-")
@@ -905,25 +906,25 @@ for pair in sorted(chainpairs):
         if af3: iptm_af = iptm_af3[chain1][chain2]  # symmetric value for each chain pair
         if boltz1: iptm_af=iptm_boltz1[chain1][chain2]
         
-        outstring=f'{chain1}    {chain2}     {pae_string:3}  {dist_string:3}  {"asym":5} ' + (
-            f'{ipsae_d0res_asym[chain1][chain2]:8.6f}    '
-            f'{ipsae_d0chn_asym[chain1][chain2]:8.6f}    '
-            f'{ipsae_d0dom_asym[chain1][chain2]:8.6f}    '
-            f'{iptm_af:5.3f}    '
-            f'{iptm_d0chn_asym[chain1][chain2]:8.6f}    '
-            f'{pDockQ[chain1][chain2]:8.4f}   '
-            f'{pDockQ2[chain1][chain2]:8.4f}   '
-            f'{LIS[chain1][chain2]:8.4f}   '
-            f'{int(n0res[chain1][chain2]):5d}  '
-            f'{int(n0chn[chain1][chain2]):5d}  '
-            f'{int(n0dom[chain1][chain2]):5d}  '
-            f'{d0res[chain1][chain2]:6.2f}  '
-            f'{d0chn[chain1][chain2]:6.2f}  '
-            f'{d0dom[chain1][chain2]:6.2f}  '
-            f'{residues_1:5d}   '
-            f'{residues_2:5d}   '
-            f'{dist_residues_1:5d}   '
-            f'{dist_residues_2:5d}   '
+        outstring=f'{chain1},{chain2},{pae_string},{dist_string},{"asym"},' + (
+            f'{ipsae_d0res_asym[chain1][chain2]:.6f},'
+            f'{ipsae_d0chn_asym[chain1][chain2]:.6f},'
+            f'{ipsae_d0dom_asym[chain1][chain2]:.6f},'
+            f'{iptm_af:5.3f},'
+            f'{iptm_d0chn_asym[chain1][chain2]:.6f},'
+            f'{pDockQ[chain1][chain2]:.4f},'
+            f'{pDockQ2[chain1][chain2]:.4f},'
+            f'{LIS[chain1][chain2]:.4f},'
+            f'{int(n0res[chain1][chain2])},'
+            f'{int(n0chn[chain1][chain2])},'
+            f'{int(n0dom[chain1][chain2])},'
+            f'{d0res[chain1][chain2]:.2f},'
+            f'{d0chn[chain1][chain2]:.2f},'
+            f'{d0dom[chain1][chain2]:.2f},'
+            f'{residues_1},'
+            f'{residues_2},'
+            f'{dist_residues_1},'
+            f'{dist_residues_2},'
             f'{pdb_stem}\n')
         OUT.write(outstring)
         PML.write("# " + outstring)
@@ -940,25 +941,25 @@ for pair in sorted(chainpairs):
 
 
             LIS_Score=(LIS[chain1][chain2]+LIS[chain2][chain1])/2.0
-            outstring=f'{chain2}    {chain1}     {pae_string:3}  {dist_string:3}  {"max":5} ' + (
-                f'{ipsae_d0res_max[chain1][chain2]:8.6f}    '
-                f'{ipsae_d0chn_max[chain1][chain2]:8.6f}    '
-                f'{ipsae_d0dom_max[chain1][chain2]:8.6f}    '
-                f'{iptm_af_value:5.3f}    '
-                f'{iptm_d0chn_max[chain1][chain2]:8.6f}    '
-                f'{pDockQ[chain1][chain2]:8.4f}   '
-                f'{pDockQ2_value:8.4f}   '
-                f'{LIS_Score:8.4f}   '
-                f'{int(n0res_max[chain1][chain2]):5d}  '
-                f'{int(n0chn[chain1][chain2]):5d}  '
-                f'{int(n0dom_max[chain1][chain2]):5d}  '
-                f'{d0res_max[chain1][chain2]:6.2f}  '
-                f'{d0chn[chain1][chain2]:6.2f}  '
-                f'{d0dom_max[chain1][chain2]:6.2f}  '
-                f'{residues_1:5d}   '
-                f'{residues_2:5d}   '
-                f'{dist_residues_1:5d}   '
-                f'{dist_residues_2:5d}   '
+            outstring=f'{chain2},{chain1},{pae_string},{dist_string},{"max"},' + (
+                f'{ipsae_d0res_max[chain1][chain2]:.6f},'
+                f'{ipsae_d0chn_max[chain1][chain2]:.6f},'
+                f'{ipsae_d0dom_max[chain1][chain2]:.6f},'
+                f'{iptm_af_value:5.3f},'
+                f'{iptm_d0chn_max[chain1][chain2]:.6f},'
+                f'{pDockQ[chain1][chain2]:.4f},'
+                f'{pDockQ2_value:.4f},'
+                f'{LIS_Score:.4f},'
+                f'{int(n0res_max[chain1][chain2])},'
+                f'{int(n0chn[chain1][chain2])},'
+                f'{int(n0dom_max[chain1][chain2])},'
+                f'{d0res_max[chain1][chain2]:.2f},'
+                f'{d0chn[chain1][chain2]:.2f},'
+                f'{d0dom_max[chain1][chain2]:.2f},'
+                f'{residues_1},'
+                f'{residues_2},'
+                f'{dist_residues_1},'
+                f'{dist_residues_2},'
                 f'{pdb_stem}\n')
             OUT.write(outstring)
             PML.write("# " + outstring)
