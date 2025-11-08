@@ -1,7 +1,10 @@
 
 # Competition Design Method
 
-Link: https://proteinbase.com/collections/nipah-binder-competition-submission-1-VQR4kC1-rj
+Submissions:
+
+- 001: https://proteinbase.com/collections/nipah-binder-competition-submission-1-VQR4kC1-rj
+- 002: https://proteinbase.com/collections/nipah-binder-competition-submission-2-sZlX1lgYZw
 
 
 ## Submission Overview
@@ -66,3 +69,15 @@ Using the m102.3 antibody from PDB 6CM1 (Hendra virus), the glycoprotein G antig
 ## Configuration
 Models: v_48_020
 Temperature: 0.1
+
+
+## Method
+
+General LLM
+
+## Description
+
+Using the m102.3 antibody from PDB 6CM1 (Hendra virus), the LLM was prompted to generate a similar Fv sequence that would bind to the glycoprotein G antigen structure of Nipha virus from PDB 2VSM.
+
+## Configuration
+Models: Qwen3-235B-A22B-Instruct-2507
