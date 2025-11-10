@@ -6,6 +6,7 @@ Submissions:
 - 001: https://proteinbase.com/collections/nipah-binder-competition-submission-1-VQR4kC1-rj
 - 002: https://proteinbase.com/collections/nipah-binder-competition-submission-2-sZlX1lgYZw
 - 003: https://proteinbase.com/collections/nipah-binder-competition-submission-3-MIijJtqxoi
+- 004: https://proteinbase.com/collections/nipah-binder-competition-submission-4-dMDbevMOIf
 
 
 ## Submission Overview
@@ -38,7 +39,7 @@ Paper: https://www.biorxiv.org/content/10.1101/2025.10.16.682644
 
 ## Configuration
 
-Model: peleke-phi-4
+Model: peleke-phi-4 / peleke-mistral-7b-instruct-v0.2
 Temperature: 0.7
 Annotated antigen sequence input: ICLQKTSNQILKPKLISYTLGQSGTCITDPLLAMDEGYFAYSHLERIG[S][C][S][R]GVSKQRIIGVGEVLDRGDEVPSLFMTNVWTPPNPNTVYHCSAVYNNEFYYVLCAVSTVGDPI[L]NSTYWSGSLMMTRLAVKPKSNGGGYNQHQLALRSIEKGRYDKVMPYGPSGIKQGDTLYFPAVGFLVRTEFKYNDSNCPITKC[Q][Y]SKPENCRLSMG[I][R]PNSHYILRSGLLKYNLSDGENPKVVFIEISDQRLSIGSPSKIYDSLGQPVFYQAS[F]SWDTMIKFGDVLTVNPLVVNWRNNTVISR[P][G][Q][S][Q]CPRFNTCP[E]IC[W][E][G][V]YNDAFLIDRINWISAGVFLDSN[Q][T][A][E]NPVFTVFKDNEILYRAQLASE[D]T[N][A][Q]KTITNCFLLKNKIWCISLV[E][I][Y]D[T]GDNV[I]RPKLFAVKIPEQCTH
 
