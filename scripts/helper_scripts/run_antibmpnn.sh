@@ -2,18 +2,26 @@
 
 ## Run in Docker
 # docker run -it --rm --gpus all -v ./:/inputs antibmpnn:latest /bin/bash
-# cd examples/
+# cd example/
 # bash /inputs/scripts/helper_scripts/run_antibmpnn.sh
 
 ## Input job information
 scripts_path="/software/antibmpnn"
 inputs_path="/inputs/data/pdbs/antibmpnn_structures"
-pdb_file_path="${inputs_path}/sbio-nipahgpg-055_prepared/sbio-nipahgpg-055_prepared.pdb"  
+
+## sbio-nipahgpg-055 Derivative
+# pdb_file_path="${inputs_path}/sbio-nipahgpg-055_prepared/sbio-nipahgpg-055_prepared.pdb"  
+# CHAINS_TO_DESIGN="H L"
+# DESIGN_ONLY_POSITIONS="30 31 32 33 34 35 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 99 100 101 102 103 104 105 106 107 108 109 110 111, 162 163 164 165 166 167 168 169 170 171 172 188 189 190 191 192 193 194 227 228 229 230 231 232 233 234 235"
+
+## sbio-nipahgpg-114 Derivative
+pdb_file_path="${inputs_path}/sbio-nipahgpg-114_prepared/sbio-nipahgpg-114_prepared.pdb"  
 CHAINS_TO_DESIGN="H L"
-DESIGN_ONLY_POSITIONS="30 31 32 33 34 35 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 99 100 101 102 103 104 105 106 107 108 109 110 111, 162 163 164 165 166 167 168 169 170 171 172 188 189 190 191 192 193 194 227 228 229 230 231 232 233 234 235"
-THEME=$(date +"%m%d")_"fv_design_fixed_positions"
+DESIGN_ONLY_POSITIONS="31 32 33 34 35 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 99 100 101 102 103 104 105, 156 157 158 159 160 161 162 163 164 165 166 182 183 184 185 186 187 188 221 222 223 224 225 226 227 228"
+
 
 ## Define input and output directories
+THEME=$(date +"%m%d")_"fv_design_fixed_positions"
 AB_NAME=$(basename "$pdb_file_path" .pdb)
 INPUT_DIR="${inputs_path}/${AB_NAME}/"
 OUTPUT_DIR="${inputs_path}/${AB_NAME}/${THEME}_${AB_NAME}"
