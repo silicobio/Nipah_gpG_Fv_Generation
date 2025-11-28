@@ -1,4 +1,3 @@
-
 # Competition Design Method
 
 Submissions:
@@ -16,6 +15,7 @@ Submissions:
 - 011: https://proteinbase.com/collections/nipah-binder-competition-submission-11-u4GiN8LsQr
 - 012: https://proteinbase.com/collections/nipah-binder-competition-submission-12-lGZjd2A3J3
 - 013: https://proteinbase.com/collections/nipah-binder-competition-submission-13-prVGNrO13U
+- 014: https://proteinbase.com/collections/nipah-binder-competition-submission-14-D9PcRgagDm
 
 ## Submission Overview
 
