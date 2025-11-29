@@ -21,10 +21,15 @@ inputs_path="/inputs/data/pdbs/antibmpnn_structures"
 
 
 ## sbio-nipahgpg-120 Derivative
-pdb_file_path="${inputs_path}/sbio-nipahgpg-120_prepared/sbio-nipahgpg-120_prepared.pdb"  
+# pdb_file_path="${inputs_path}/sbio-nipahgpg-120_prepared/sbio-nipahgpg-120_prepared.pdb"  
+# CHAINS_TO_DESIGN="B"
+# DESIGN_ONLY_POSITIONS="31 32 33 34 35 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 99 100 101 102 103 104 105 106 107 108 109 110 111 158 159 160 161 162 163 164 165 166 167 168 184 185 186 187 188 189 190 223 224 225 226 227 228 229 230 231"
+
+## sbio-nipahgpg-148 Derivative
+pdb_file_path="${inputs_path}/sbio-nipahgpg-148_prepared/sbio-nipahgpg-148_prepared.pdb"
 CHAINS_TO_DESIGN="B"
-158-168, 184-190, 223-231
-DESIGN_ONLY_POSITIONS="31 32 33 34 35 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 99 100 101 102 103 104 105 106 107 108 109 110 111 158 159 160 161 162 163 164 165 166 167 168 184 185 186 187 188 189 190 223 224 225 226 227 228 229 230 231"
+DESIGN_ONLY_POSITIONS="31 32 33 34 35 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 99 100 101 102 103 104 105 106 107 108 109 110 111 162 163 164 165 166 167 168 169 170 171 172 188 189 190 191 192 193 194 227 228 229 230 231 232 233 234 235"
+
 
 
 ## Define input and output directories
@@ -57,7 +62,7 @@ python ${scripts_path}/Running_AntiBMPNN_run.py \
     --out_folder $OUTPUT_DIR \
     --model_name "antibmpnn_000" \
     --num_seq_per_target 10 \
-    --sampling_temp "0.2" \
+    --sampling_temp "0.4" \
     --batch_size 10 \
     --backbone_noise 0
 
