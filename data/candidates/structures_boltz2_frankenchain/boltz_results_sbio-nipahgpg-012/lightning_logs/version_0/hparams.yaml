@@ -152,7 +152,7 @@ predict_args:
   diffusion_samples: 1
   max_parallel_samples: 5
   write_confidence_summary: true
-  write_full_pae: false
+  write_full_pae: true
   write_full_pde: false
 fix_sym_check: true
 cyclic_pos_enc: true

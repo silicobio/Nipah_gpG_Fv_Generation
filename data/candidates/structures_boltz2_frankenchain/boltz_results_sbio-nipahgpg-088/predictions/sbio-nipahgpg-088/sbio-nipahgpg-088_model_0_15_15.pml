@@ -1,0 +1,8 @@
+# Chn1 Chn2  PAE Dist  Type   ipSAE    ipSAE_d0chn ipSAE_d0dom  ipTM_af  ipTM_d0chn     pDockQ     pDockQ2    LIS      n0res  n0chn  n0dom   d0res   d0chn   d0dom  nres1   nres2   dist1   dist2  Model
+# A,B,15,15,asym,0.000000,0.000000,0.000000,0.290,0.156106,0.1223,0.0100,0.0000,173,842,0,4.90,9.84,1.04,0,0,0,0,../data/candidates/structures_boltz2_frankenchain/boltz_results_sbio-nipahgpg-088/predictions/sbio-nipahgpg-088/sbio-nipahgpg-088_model_0
+alias color_A_B, color gray80, all; color magenta, chain  A and resi None; color marine, chain  B and resi None
+
+# B,A,15,15,asym,0.005386,0.326621,0.114687,0.286,0.173062,0.1223,0.0103,0.0000,13,842,186,1.04,9.84,5.08,173,13,0,0,../data/candidates/structures_boltz2_frankenchain/boltz_results_sbio-nipahgpg-088/predictions/sbio-nipahgpg-088/sbio-nipahgpg-088_model_0
+# A,B,15,15,max,0.005386,0.326621,0.114687,0.290,0.173062,0.1223,0.0103,0.0000,13,842,186,1.04,9.84,5.08,13,173,0,0,../data/candidates/structures_boltz2_frankenchain/boltz_results_sbio-nipahgpg-088/predictions/sbio-nipahgpg-088/sbio-nipahgpg-088_model_0
+alias color_B_A, color gray80, all; color marine, chain  B and resi 2-7+17-40+44-55+57-86+90-98+103-114+135+137-139+151-172+175-200+203-210+212+215+217-233+235; color magenta, chain  A and resi 221-223+230-232+282-284+351-354
+
