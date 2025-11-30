@@ -16,6 +16,7 @@ Submissions:
 - 012: https://proteinbase.com/collections/nipah-binder-competition-submission-12-lGZjd2A3J3
 - 013: https://proteinbase.com/collections/nipah-binder-competition-submission-13-prVGNrO13U
 - 014: https://proteinbase.com/collections/nipah-binder-competition-submission-14-D9PcRgagDm
+- 015: https://proteinbase.com/collections/nipah-binder-competition-submission-15-bbW2sS8qBQ
 
 ## Submission Overview
 
