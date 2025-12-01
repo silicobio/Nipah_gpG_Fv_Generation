@@ -25,7 +25,7 @@ Our submission focuses on the generation of targeted antibodies that bind to Nip
 
 We then co-folded the peleke-1-generated sequences and selected for candidates that were predicted to bind at the desired epitope (the binding site of ephrin-B2 from PDB 2VSM) with multiple molecular interactions with the antigen.
 
-For some candidates, we utilized ProteinMPNN to generate additional derivative sequences based on a peleke-1-generated antibody or reference antibody (e.g. m102.3). The use of ProteinMPNN produced more varied sequences, some of which are predicted to exhibit desired binding properties.
+For some candidates, we utilized ProteinMPNN/AntiBMPNN to generate additional derivative sequences based on a peleke-1-generated antibody or reference antibody (e.g. m102.3). The use of ProteinMPNN/AntiBMPNN produced more varied sequences, some of which are predicted to exhibit desired binding properties.
 
 Notes: All sequences are the heavy and light Fv chain sequences connected by a (G3S)4 linker. Also, all generated sequences were numbered through the Chothia numbering system to ensure that they all are antibody-like sequences.
 
