@@ -1,0 +1,8 @@
+# Chn1 Chn2  PAE Dist  Type   ipSAE    ipSAE_d0chn ipSAE_d0dom  ipTM_af  ipTM_d0chn     pDockQ     pDockQ2    LIS      n0res  n0chn  n0dom   d0res   d0chn   d0dom  nres1   nres2   dist1   dist2  Model
+# A,B,15,15,asym,0.034565,0.310149,0.199342,0.495,0.269116,0.4012,0.0172,0.0000,63,773,381,2.71,9.51,7.07,306,75,95,45,../data/candidates/structures_boltz2_frankenchain_comp/boltz_results_sbio-nipahgpg-125/predictions/sbio-nipahgpg-125/sbio-nipahgpg-125_model_0
+alias color_A_B, color gray80, all; color magenta, chain  A and resi 130-133+144-174+176-183+185+192-203+205+207-217+220-250+271+275-287+291-301+303-304+322-346+356-361+365-376+380-400+405-445+448-498+501-512+517-528; color marine, chain  B and resi 31-37+45-61+95-110+135-138+159+161-170+180+182-185+202-203+205+221-232
+
+# B,A,15,15,asym,0.122950,0.342713,0.239619,0.462,0.266140,0.4012,0.0156,0.0404,175,773,420,4.93,9.51,7.37,224,196,52,56,../data/candidates/structures_boltz2_frankenchain_comp/boltz_results_sbio-nipahgpg-125/predictions/sbio-nipahgpg-125/sbio-nipahgpg-125_model_0
+# A,B,15,15,max,0.122950,0.342713,0.239619,0.495,0.269116,0.4012,0.0172,0.0202,175,773,420,4.93,9.51,7.37,306,224,95,52,../data/candidates/structures_boltz2_frankenchain_comp/boltz_results_sbio-nipahgpg-125/predictions/sbio-nipahgpg-125/sbio-nipahgpg-125_model_0
+alias color_B_A, color gray80, all; color marine, chain  B and resi 2-120+136-240; color magenta, chain  A and resi 130-134+136+147-155+159-163+170+182-183+185+193-196+211-216+234+278-286+293-300+325-326+328-332+338-344+358-376+382-399+405+407-430+432-444+450-472+475+479-482+485-496+503-510+519-525
+
